@@ -13,6 +13,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      COMPOSER_VERSION: 2
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -26,8 +29,11 @@ jobs:
       - name: copy from .env.example to .env
         run: cp .env.example .env
 
-      - name: list directory
-        run: ls -al
+      - name: Run composer install
+        uses: baschny/php-composer-action@v1
+        with:
+          composer_version: ${{env.COMPOSER_VERSION}}
+          command: install
 
       - name: generate app key
         run: php artisan key:generate
