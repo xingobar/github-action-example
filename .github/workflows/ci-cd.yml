@@ -37,3 +37,13 @@ jobs:
 
       - name: generate app key
         run: php artisan key:generate
+
+  build:
+
+    name: Build
+
+    needs: pre-build
+
+    steps:
+      - name: Run phpunit
+        run: ./vendor/bin/phpunit
