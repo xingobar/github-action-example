@@ -8,8 +8,8 @@ on:
 
 jobs:
 
-  test:
-    name: Test
+  pre-build:
+    name: Pre Build
 
     runs-on: ubuntu-latest
 
