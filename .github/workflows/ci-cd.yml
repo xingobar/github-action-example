@@ -26,5 +26,8 @@ jobs:
       - name: copy from .env.example to .env
         run: cp .env.example .env
 
+      - name: list directory
+        run: ls -al
+
       - name: generate app key
         run: php artisan key:generate
