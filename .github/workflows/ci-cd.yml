@@ -1,0 +1,18 @@
+
+name: Run ci/cd tets
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  test:
+    name: Test
+
+    runs-on: ubuntu
+
+    steps:
+      - name: test steps
+        run: echo "Hello world"
